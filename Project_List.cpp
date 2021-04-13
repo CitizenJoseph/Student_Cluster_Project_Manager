@@ -22,3 +22,14 @@ Project_List& Project_List::operator+= (Project& proj) {
     project_count++;
     return *this;
 }
+
+Project_List& Project_List::operator-- (){
+    list.pop_back();
+    project_count--;
+    return *this;
+}
+
+Project_List& Project_List::operator-=(int i) {
+    list.erase(list.begin() + i);
+    return *this;
+}

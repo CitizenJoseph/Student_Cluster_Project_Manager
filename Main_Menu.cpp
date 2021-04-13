@@ -11,9 +11,12 @@ void Main_Menu::show_title() {
 }
 
 void Main_Menu::show_projects() {
+    int i = 1;
     for (Project proj : list.get_list()) {
-        cout << proj << "\n";
+        cout << i << ". " << proj << "\n";
+        i++;
     }
+    cout << "\n";
 }
 
 void Main_Menu::show_commands() {
@@ -25,10 +28,35 @@ void Main_Menu::show_commands() {
     << "X - Exit the program.\n\n";
 }
 
-void Main_Menu::enter_project() {
+/*void Main_Menu::enter_project() {
     int proj_number;
     cout << "Enter the number of the project you would like to enter: ";
     cin >> proj_number;
+
+}*/
+
+void Main_Menu::add_project() {
+
+    string project_name, file_path;
+    cout << "Enter the name of the project (One or no spaces): ";
+    cin >> project_name;
+    cout << "Enter the absolute file directory of " + project_name + ": ";
+    cin >> file_path;
+    Project proj(project_name, file_path);
+    list += proj;
+
+}
+
+void Main_Menu::remove_project() {
+    string project_name;
+    
+    cout << "Enter the name of the project to remove: ";
+    cin >> project_name;
+
+    for (int i = 0; i < Project_List::project_count; i++) {
+        if (list.get_list()[i].get_name() == project_name)
+            list -= (i);
+    }
 
 }
 
@@ -39,12 +67,11 @@ void Main_Menu::read() {
     getline(input_file, name);
     Project_List::editor = name;
     while(!input_file.eof()) {
-        //getline(input_file, name, '\t');
-        //getline(input_file, filepath, '\n');
         input_file >> name >> filepath;
         Project proj(name, filepath);
         list += proj;
     }
+    --list;
     input_file.close();
 }
 
@@ -68,20 +95,26 @@ void change(string project_name, Project_List& list) {
 
     }
 
-    string answer;
+    char answer;
     string changed;
-    cout << "Enter N to change the name of a project or F to change it's filepath: ";
+    cout << "Enter N to change the name of a project, F to change it's filepath, or T to the change your preferred text editor: ";
     cin >> answer;
-    if (answer == "N") {
+    if (tolower(answer) == 'n') {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "What will the new name be?: ";
         getline(cin, changed);
-        //list.get_list()[temp].set_name(changed);
         list.list[temp].set_name(changed);
     }
-    if (answer == "F") {
+    if (tolower(answer) == 'f') {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "What will the new filepath be?: ";
         getline(cin, changed);
-        list.get_list()[temp].set_filepath(changed);
+        list.list[temp].set_filepath(changed);
+    }
+    if (tolower(answer) == 't') {
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "What is your preferred text-editor?: ";
+        getline(cin, changed);
+        Project_List::editor = changed;
     }
 }

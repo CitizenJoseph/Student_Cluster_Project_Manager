@@ -11,10 +11,11 @@ class Project_List
 public:
     vector<Project> get_list();
     static int project_count;
-    //static vector<Project> list;
     static string editor;
     void write();
     Project_List& operator+=(Project&);
+    Project_List& operator--();
+    Project_List& operator-=(int);
     friend void change(string project_name, Project_List& list);
 };
 #endif 

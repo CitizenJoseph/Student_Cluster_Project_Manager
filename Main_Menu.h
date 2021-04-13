@@ -1,6 +1,7 @@
 #ifndef MAIN_MENU_H
 #define MAIN_MENU_H
 
+#include <ctype.h>
 #include <limits>
 #include <iostream>
 #include <iomanip>
@@ -16,6 +17,8 @@ public:
     void show_projects();
     virtual void show_commands();
     void enter_project();
+    void add_project();
+    void remove_project();
     void read();
 };
 

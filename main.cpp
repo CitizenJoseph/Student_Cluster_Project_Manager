@@ -1,14 +1,15 @@
 #include "Main_Menu.h"
 #include "Project_Menu.h"
 #include "Error.h"
+#include <ctype.h>
 #include <limits>
 
 int main() {
 
     Project_Menu p;
     Main_Menu m;
-    char command = NULL;
-    char locCommand = NULL;
+    char command = 0;
+    char locCommand = 0;
     string answer;
 
     m.read();
@@ -20,28 +21,47 @@ int main() {
     do {
         cout << "Command: ";
         cin >> command;
-        switch (command) {
-        case 'C':
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        switch (tolower(command)) {
+        case 'c':
+            //cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Enter the project name: ";
             getline(cin, answer);
             change(answer, m.get_list());
             break;
-        case 'E':
+        case 'e':
             int proj_number;
             cout << "Enter the number of the project you would like to enter: ";
             cin >> proj_number;
             p.show_contents(proj_number, m.get_list());
             p.show_commands();
-            /*do {
+            do {
+               cout << "Command: ";
+               cin >> locCommand;
 
-            } while (locCommand != 'x');*/
+	       switch (tolower(locCommand)) {
+	          case 'e':
+                      p.enter_file(proj_number, m.get_list());
+                      break;
+                  case 'x':
+		      break;
+               }
+               
+            } while (locCommand != 'x');
             break;
-        case 'A':
+        case 'a':
+	    m.add_project();
             break;
-        case 'R':
+        case 'r':
+            m.remove_project();
             break;
+        case 'x':
+            break;
+        default:
+            cout << "Invalid command. Try again.\n";
+            continue;
         }
+        cout << "\n";
         m.show_projects();
         m.show_commands();
     } while (command != 'x');

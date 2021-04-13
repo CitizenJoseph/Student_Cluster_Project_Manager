@@ -1,3 +1,2 @@
-vim
+nano
 html	/home/c/cittadino
-css	/home/c/cittadino/flex

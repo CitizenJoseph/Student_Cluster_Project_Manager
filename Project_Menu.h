@@ -9,7 +9,7 @@ class Project_Menu : public Main_Menu
 public:
     void show_contents(int project, Project_List list);
     void show_commands();
-    void enter_file(Project_List list);
+    void enter_file(int project, Project_List list);
 };
 
 #endif
