@@ -7,7 +7,7 @@ class Project_Menu : public Main_Menu
 {
     int working_proj = 0;
 public:
-    void show_contents(int project, Project_List list);
+    bool show_contents(int project, Project_List list);
     void show_commands();
     void enter_file(int project, Project_List list);
 };

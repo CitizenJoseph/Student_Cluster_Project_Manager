@@ -22,6 +22,7 @@ void Main_Menu::show_projects() {
 void Main_Menu::show_commands() {
     cout << "COMMANDS:\n\n"
     << "C - Change the name or filepath of a selected project.\n"
+    << "T - Change the text-editor used to edit files.\n"
     << "E - Enter a project.\n"
     << "A - Add a project.\n"
     << "R - Remove a project.\n"
@@ -97,7 +98,7 @@ void change(string project_name, Project_List& list) {
 
     char answer;
     string changed;
-    cout << "Enter N to change the name of a project, F to change it's filepath, or T to the change your preferred text editor: ";
+    cout << "Enter N to change the name of a project or F to change it's filepath: ";
     cin >> answer;
     if (tolower(answer) == 'n') {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -111,10 +112,10 @@ void change(string project_name, Project_List& list) {
         getline(cin, changed);
         list.list[temp].set_filepath(changed);
     }
-    if (tolower(answer) == 't') {
+    /*if (tolower(answer) == 't') {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "What is your preferred text-editor?: ";
         getline(cin, changed);
         Project_List::editor = changed;
-    }
+    }*/
 }

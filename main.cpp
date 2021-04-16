@@ -29,16 +29,24 @@ int main() {
             getline(cin, answer);
             change(answer, m.get_list());
             break;
+        case 't':
+            cout << "What is your preferred text-editor?: ";
+            getline(cin, answer);
+            Project_List::editor = answer;
+            break;
         case 'e':
             int proj_number;
             cout << "Enter the number of the project you would like to enter: ";
             cin >> proj_number;
-            p.show_contents(proj_number, m.get_list());
+            Error::list_check(proj_number);
+            if (p.show_contents(proj_number, m.get_list()) == false) {
+                break;
+	    }
             p.show_commands();
             do {
                cout << "Command: ";
                cin >> locCommand;
-
+               cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	       switch (tolower(locCommand)) {
 	          case 'e':
                       p.enter_file(proj_number, m.get_list());
