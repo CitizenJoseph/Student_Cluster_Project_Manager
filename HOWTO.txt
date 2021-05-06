@@ -1,0 +1,212 @@
+HOW TO OPERATE THE STUDENT CLUSTER PROJECT MANAGER
+
+TO COMPILE: g++ Error.h Error.cpp Main_Menu.h Main_Menu.cpp Project_Menu.h Project_Menu.cpp Project.h Project.cpp Project_List.h Project_List.cpp main.cpp
+
+WARNING: TO ENSURE THAT THE PROGRAM OPERATES AS INTENDED, MAKE SURE PROJECTS ADDED TO THE PROGRAM ARE GIVEN
+THE ABSOLUTE FILE PATH FROM ROOT. Example: ("/home/../..")
+ALSO USE PROJECT NAMES THAT CONTAIN NO SPACES AS THIS WILL CONFLICT WITH HOW THE PROGRAM WRITES PROJECTS BACK INTO
+project_list.txt. USE UNDERSCORES INSTEAD.
+
+MAIN MENU
+
+THE PROGRAM WILL LAUNCH INTO THE MAIN MENU ON START-UP. IF IT'S YOUR FIRST TIME STARTING UP THE PROGRAM, YOU SHOULD SEE
+```
+	Student Cluster Project Manager
+
+	COMMANDS:
+
+	C - Change the name or filepath of a selected project.
+	T - Change the text-editor used to edit files.
+	E - Enter a project.
+	A - Add a project.
+	R - Remove a project.
+	X - Exit the program.
+
+	Command: 
+```
+ONCE PROJECTS HAVE BEEN ADDED TO THE PROGRAM, YOUR MAIN_MENU WILL LOOK LIKE THIS
+ ```
+	Student Cluster Project Manager
+
+	1. NAME: PROJ
+        PATH: /MY/FILEPATH
+	2. NAME: PROJ2
+        PATH: /MY/FILEPATH2
+
+	COMMANDS:
+
+	C - Change the name or filepath of a selected project.
+	T - Change the text-editor used to edit files.
+	E - Enter a project.
+	A - Add a project.
+	R - Remove a project.
+	X - Exit the program.
+
+	Command: 
+```
+MAIN MENU COMMANDS:
+
+C: PROMPTED TO CHANGE THE NAME OR FILEPATH OF A SELECTED FILE
+	N: CHANGE NAME
+	F: CHANGE FILEPATH
+```
+	Student Cluster Project Manager
+
+	1. NAME: html
+        PATH: /home/c/cittadino
+
+	COMMANDS:
+
+	C - Change the name or filepath of a selected project.
+	T - Change the text-editor used to edit files.
+	E - Enter a project.
+	A - Add a project.
+	R - Remove a project.
+	X - Exit the program.
+
+	Command: c
+	Enter the number of the project you would like to enter: 1
+	Enter N to change the name of a project or F to change it's filepath: n
+	What will the new name be?: css
+
+	1. NAME: css
+        PATH: /home/c/cittadino
+
+	COMMANDS:
+
+	C - Change the name or filepath of a selected project.
+	T - Change the text-editor used to edit files.
+	E - Enter a project.
+	A - Add a project.
+	R - Remove a project.
+	X - Exit the program.
+
+	Command:
+```
+
+T: PROMPTED TO CHANGE PREFERRED TEXT-EDITOR (DEFAULT IS vi)
+```
+	Student Cluster Project Manager
+
+	1. NAME: html
+        PATH: /home/c/cittadino
+
+	COMMANDS:
+
+	C - Change the name or filepath of a selected project.
+	T - Change the text-editor used to edit files.
+	E - Enter a project.
+	A - Add a project.
+	R - Remove a project.
+	X - Exit the program.
+
+	Command: t
+	What is your preferred text-editor?: nano
+```
+
+E: PROMPTED TO ENTER A PROJECT BY SELECTING A PROJECT NUMBER FROM THE LIST DISPLAYED.
+   IF YOU SELECT A PROJECT NOT IN THE LIST, YOU WILL BE ASKED TO SELECT AGAIN.
+   ONCE YOU HAVE ENTERED A PROJECT, YOU WILL BE IN THE PROJECT MENU. (See below)
+```
+	1. NAME: html
+        PATH: /home/c/cittadino
+
+	COMMANDS:
+
+	C - Change the name or filepath of a selected project.
+	T - Change the text-editor used to edit files.
+	E - Enter a project.
+	A - Add a project.
+	R - Remove a project.
+	X - Exit the program.
+
+	Command: e
+	Enter the number of the project you would like to enter: 1
+	total 21
+	-rwxr-x---  1 cittadino usfuser 8448 Mar 10 23:02 a.out
+	drwxr-x---  2 cittadino usfuser    2 Jan 13 11:23 COP3331
+	drwxrwxr-x  2 cittadino usfuser    4 Feb  3 12:09 cp_3_wizard
+	drwxr-x---  2 cittadino usfuser    6 Mar  2 17:42 CP6
+	drwxr-x---  2 cittadino usfuser   11 Mar  8 18:19 cp7
+	-rw-r-----  1 cittadino usfuser  905 Mar  3 17:46 curses.cpp
+	drwxr-x--- 18 cittadino usfuser   34 Mar  2 19:56 ffmpeg
+	drwxr-x---  2 cittadino usfuser   19 Apr 19 18:59 flex
+	-rw-r-----  1 cittadino usfuser  262 Feb  2 11:34 functions.h
+	drwxr-x---  2 cittadino usfuser    3 Feb 10 11:32 group4
+	drwxrwxr-x  2 cittadino usfuser   11 Feb  2 11:39 Group6
+	drwxr-x---  2 cittadino usfuser    2 Jan 14 11:20 lab1_q5
+	drwxr-x---  3 cittadino usfuser    1 Mar  1 14:25 lab6_q8
+	drwxr-x---  3 cittadino usfuser    1 Mar  1 14:25 lab6_q9
+	drwxr-x---  3 cittadino usfuser   16 Mar 19 01:08 lab8-q9 (1)
+	drwxr-x---  2 cittadino usfuser   14 Mar 19 17:25 lab8_real
+	drwxr-x---  4 cittadino usfuser    2 Mar 29 22:39 Lab9
+	-rw-r-----  1 cittadino usfuser  249 Mar 10 23:07 main2.cpp
+	-rw-r-----  1 cittadino usfuser 1404 Mar 10 22:56 main.cpp
+	drwxr-xr-x  2 cittadino usfuser    0 Feb  3 12:03 Music
+	-rw-r-----  1 cittadino usfuser    0 Apr 14 18:55 s
+	drwxr-xr-x  4 cittadino usfuser    2 Feb  3 12:03 snap
+	drwxr-x---  2 cittadino usfuser    0 Mar 10 23:02 tes2
+	drwxr-x---  2 cittadino usfuser    1 Mar  3 14:28 test
+	drwxr-x---  2 cittadino usfuser   11 Mar  2 19:41 THANK GOD FOR DRUGS v3
+	COMMANDS:
+
+	T - Change the text-editor used to edit files.
+	E - Enter a file.
+	R - Remove a file.
+	X - Exit the program.
+
+	Command:
+```
+
+A: PROMPTED TO ENTER NAME AND FILEPATH FOR A PROJECT TO BE ADDED TO THE PROGRAM
+
+R: PROMPTED TO REMOVE A SELECTED PROJECT
+
+X: SAVE ALL CHANGES MADE AND EXIT PROGRAM. YOU MUST EXIT THE PROGRAM IN ORDER FOR YOUR CHANGES TO BE SAVED.
+
+
+PROJECT_MENU
+
+THE PROJECT MENU WILL DISPLAY THE CONTENTS OF THE PROJECT ENTERED AND THE COMMANDS ASSOCIATED WITH THE MENU.
+ANY CHANGES MADE WITHIN THIS MENU ARE PERMANENT EVEN IF YOU DO NOT PROPERLY EXIT THE PROGRAM.
+```
+	total 108842
+	-rwxr-x--- 1 cittadino usfuser    56400 Apr 17 15:21 a.out
+	-rw-r----- 1 cittadino usfuser      716 Apr 17 15:08 Error.cpp
+	-rw-r----- 1 cittadino usfuser      271 Apr 17 15:08 Error.h
+	-rw-r----- 1 cittadino usfuser 23196752 Apr 17 15:21 Error.h.gch
+	-rw-r----- 1 cittadino usfuser     3268 Apr 17 15:21 main.cpp
+	-rw-r----- 1 cittadino usfuser     3055 Apr 17 15:20 Main_Menu.cpp
+	-rw-r----- 1 cittadino usfuser      526 Apr 17 15:08 Main_Menu.h
+	-rw-r----- 1 cittadino usfuser 23925904 Apr 17 15:21 Main_Menu.h.gch
+	-rw-r----- 1 cittadino usfuser      397 Apr 17 15:08 Project.cpp
+	-rw-r----- 1 cittadino usfuser      551 Apr 17 15:08 Project.h
+	-rw-r----- 1 cittadino usfuser 17138256 Apr 17 15:21 Project.h.gch
+	-rw-r----- 1 cittadino usfuser      908 Apr 17 15:08 Project_List.cpp
+	-rw-r----- 1 cittadino usfuser      763 Apr 17 15:08 Project_List.h
+	-rw-r----- 1 cittadino usfuser 23192592 Apr 17 15:21 Project_List.h.gch
+	-rw-r----- 1 cittadino usfuser       70 Apr 17 15:12 project_list.txt
+	-rw-r----- 1 cittadino usfuser     1701 Apr 17 15:18 Project_Menu.cpp
+	-rw-r----- 1 cittadino usfuser      500 Apr 17 15:08 Project_Menu.h
+	-rw-r----- 1 cittadino usfuser 23925936 Apr 17 15:21 Project_Menu.h.gch
+	-rw-r----- 1 cittadino usfuser        0 Apr 17 15:08 README.md
+
+	COMMANDS:
+	T - Change the text-editor used to edit files.
+	E - Enter a file.
+	R - Remove a file.
+	X - Exit the program.
+
+	Command: 
+```
+PROJECT MENU COMMANDS:
+
+T: SAME AS IN MAIN MENU
+
+E: ENTERS A FILE USING THE TEXT-EDITOR SET BY THE USER.
+   DEPENDING ON THE TEXT-EDITOR IF A FILE DOES NOT EXIST, IT MAY BE CREATED WHEN USING THIS COMMAND.
+   USE WITH CAUTION.
+
+R: REMOVE A FILE FROM THE PROJECT DIRECTORY.
+
+X: EXIT THE PROJECT MENU AND RETURN TO THE MAIN MENU.

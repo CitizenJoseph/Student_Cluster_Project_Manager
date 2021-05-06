@@ -4,21 +4,21 @@
 #include <ctype.h>
 #include <limits>
 #include <iostream>
-#include <iomanip>
 #include <stdlib.h>
+#include <iomanip>
 #include "Project_List.h"
 
 class Main_Menu
 {
-    Project_List list;
+    Project_List obj_list; //main_menus private list
 public:
-    Project_List& get_list();
+    Project_List& get_list(); //returns reference to Main_Menu list
     void show_title();
     void show_projects();
-    virtual void show_commands();
-    void enter_project();
+    void change_edit();
+    virtual void show_commands(); //virtual function to show commands between menus
     void add_project();
-    void remove_project();
+    void remove_project(int);
     void read();
 };
 

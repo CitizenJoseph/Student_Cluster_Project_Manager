@@ -4,13 +4,13 @@
 #include "Project_List.h"
 #include <iostream>
 
+using namespace std;
+
 class Error
 {
-public:
+public: //static functions to help with error-validation
     static void system_check(int);
     static void list_check(int& num);
-    static void bad_input(char command);
-    static void bad_command();
 };
 
 #endif

@@ -7,15 +7,15 @@
 
 class Project_List
 {
-    vector<Project> list;
+    vector<Project> proj_list; //Project_List vector container
 public:
     vector<Project> get_list();
-    static int project_count;
-    static string editor;
+    static int project_count; //static count of projects in project list for easy access 
+    static string editor; //static string of user text-editor for easy access. 
     void write();
-    Project_List& operator+=(Project&);
-    Project_List& operator--();
-    Project_List& operator-=(int);
-    friend void change(string project_name, Project_List& list);
+    Project_List& operator+=(Project&); //operator+= to add project to list
+    Project_List& operator--(); //operator-- to remove last project from list
+    Project_List& operator-=(int); //operator-= to remove project from specified index 
+    friend void change(int project_num, Project_List& list); //friend function to access private list 
 };
 #endif 
